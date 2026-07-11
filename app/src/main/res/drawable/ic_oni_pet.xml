@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/ongil_primary"
+        android:pathData="M24,2C13.5,2 6,9.7 6,19.6C6,31.6 24,46 24,46C24,46 42,31.6 42,19.6C42,9.7 34.5,2 24,2Z" />
+    <path
+        android:fillColor="@color/ongil_success_light"
+        android:pathData="M24,8L35,12V21C35,28 30.4,33.3 24,36C17.6,33.3 13,28 13,21V12Z" />
+    <path
+        android:fillColor="@color/ongil_secondary"
+        android:pathData="M24,12L26.3,17.1L32,17.7L27.7,21.5L29,27L24,24.1L19,27L20.3,21.5L16,17.7L21.7,17.1Z" />
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M20,29.5C21.2,30.4 22.5,31.1 24,31.8C25.5,31.1 26.8,30.4 28,29.5C26.7,29.8 25.4,30 24,30C22.6,30 21.3,29.8 20,29.5Z" />
+</vector>

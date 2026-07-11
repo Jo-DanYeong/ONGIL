@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:text="집까지 어떤 길로 갈까요?"
+            android:text="야간에는 어떤 길이 안전할까요?"
             android:textColor="@color/ongil_text"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="시간과 위험 요인을 함께 비교해보세요."
+            android:text="도착 시간뿐 아니라 밝기와 도움을 요청할 수 있는 장소도 비교해요."
             android:textColor="@color/ongil_text_secondary"
             android:textSize="15sp" />
 
@@ -55,6 +55,7 @@
                 android:padding="20dp">
 
                 <TextView
+                    android:id="@+id/planATitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_pill_green"
@@ -69,37 +70,40 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:text="플랜 A · 안전 우선"
+                    android:text="플랜 A · 야간 안전 우선"
                     android:textColor="@color/ongil_text"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/planAMeta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="15분  ·  위험도 28  ·  안전"
+                    android:text="15분 · 야간 안전 점수 78"
                     android:textColor="@color/ongil_success_dark"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/planAProgress"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
                     android:layout_marginTop="14dp"
                     android:max="100"
-                    android:progress="28"
+                    android:progress="78"
                     app:indicatorColor="@color/ongil_success"
                     app:trackColor="@color/ongil_success_light"
                     app:trackCornerRadius="4dp"
                     app:trackThickness="8dp" />
 
                 <TextView
+                    android:id="@+id/planAFactors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="✓ 보행 신호등 4곳\n✓ 밝은 대로 구간 82%\n△ 공사 구간 1곳 우회"
+                    android:text="✓ 밝은 길 구간 84%\n✓ 편의점·파출소 등 안전 거점 4곳\n✓ 어두운 골목 없이 이동"
                     android:textColor="@color/ongil_text_secondary"
                     android:textSize="14sp" />
 
@@ -129,6 +133,7 @@
                 android:padding="20dp">
 
                 <TextView
+                    android:id="@+id/planBTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="플랜 B · 빠른 길"
@@ -137,31 +142,34 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/planBMeta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="10분  ·  위험도 61  ·  주의"
+                    android:text="10분 · 야간 안전 점수 42"
                     android:textColor="@color/ongil_warning_dark"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/planBProgress"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
                     android:layout_marginTop="14dp"
                     android:max="100"
-                    android:progress="61"
+                    android:progress="42"
                     app:indicatorColor="@color/ongil_warning"
                     app:trackColor="@color/ongil_warning_light"
                     app:trackCornerRadius="4dp"
                     app:trackThickness="8dp" />
 
                 <TextView
+                    android:id="@+id/planBFactors"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="✓ 5분 빠른 도착\n△ 신호등 없는 골목 2곳\n△ 공사 차량 진출입 구간"
+                    android:text="✓ 5분 빠른 도착\n△ 밝은 길 구간 48%\n△ 안전 거점 1곳 · 어두운 골목 2곳"
                     android:textColor="@color/ongil_text_secondary"
                     android:textSize="14sp" />
 
@@ -181,7 +189,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:gravity="center"
-            android:text="위험도는 공사 · 신호등 · 골목길 등 공개 데이터와 신고 정보를 바탕으로 계산합니다."
+            android:text="온길은 골목 단위 범죄를 예측하지 않습니다. 가로등 · 안전 거점 · 시간대 · 교통 혼잡을 조합한 야간 안전 우선 경로입니다."
             android:textColor="@color/ongil_text_muted"
             android:textSize="12sp" />
     </LinearLayout>

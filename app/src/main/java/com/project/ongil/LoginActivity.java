@@ -27,6 +27,9 @@ public class LoginActivity extends AppCompatActivity {
         MaterialButtonToggleGroup roleGroup = findViewById(R.id.roleGroup);
         MaterialButton continueButton = findViewById(R.id.continueButton);
 
+        selectedRole = ROLE_STUDENT;
+        roleGroup.check(R.id.studentRoleButton);
+
         roleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             if (!isChecked) {
                 return;

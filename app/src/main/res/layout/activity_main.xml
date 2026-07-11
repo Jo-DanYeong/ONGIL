@@ -51,6 +51,18 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/savedPlacesButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginEnd="6dp"
+                android:minWidth="0dp"
+                android:text="장소 설정"
+                android:textColor="@color/ongil_primary"
+                android:textSize="12sp"
+                app:cornerRadius="14dp" />
+
             <TextView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
@@ -65,21 +77,26 @@
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_marginHorizontal="16dp"
-            android:background="@drawable/bg_map">
+            android:background="@drawable/bg_map"
+            android:clipToOutline="true">
 
-            <View
+            <FrameLayout
+                android:id="@+id/tmapContainer"
                 android:layout_width="match_parent"
-                android:layout_height="22dp"
-                android:layout_gravity="center_vertical"
-                android:background="@color/map_road" />
+                android:layout_height="match_parent">
 
-            <View
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/map_road" />
+                <TextView
+                    android:id="@+id/mapLoadingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="TMAP 지도를 불러오고 있어요"
+                    android:textColor="@color/ongil_text_secondary"
+                    android:textSize="13sp" />
+            </FrameLayout>
 
             <TextView
+                android:id="@+id/mapStatusBadge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|start"
@@ -94,32 +111,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="-76dp"
-                android:layout_marginTop="-54dp"
-                android:background="@drawable/bg_marker_student"
-                android:gravity="center"
-                android:text="학생"
-                android:textColor="@color/white"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="112dp"
-                android:layout_marginTop="84dp"
-                android:background="@drawable/bg_marker_parent"
-                android:gravity="center"
-                android:text="부모"
-                android:textColor="@color/white"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
@@ -128,10 +119,50 @@
                 android:background="@drawable/bg_pill_green"
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="8dp"
-                android:text="B 픽업존 · 여유"
+                android:text="귀가 상황 확인 중"
                 android:textColor="@color/ongil_success_dark"
                 android:textSize="12sp"
                 android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/oniPetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:contentDescription="온길 귀가 도우미 온이"
+                        android:src="@drawable/ic_oni_pet" />
+
+                    <TextView
+                        android:id="@+id/oniMapMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:maxWidth="150dp"
+                        android:text="오늘 픽업이야,\n혼자 가?"
+                        android:textColor="@color/ongil_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </FrameLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -167,6 +198,15 @@
                     android:textColor="@color/ongil_text_secondary"
                     android:textSize="13sp" />
 
+                <TextView
+                    android:id="@+id/decisionEvidenceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="3dp"
+                    android:textColor="@color/ongil_text_muted"
+                    android:textSize="12sp" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/tmapButton"
                     style="@style/Widget.Material3.Button.TonalButton"
@@ -183,7 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
-            android:text="무엇을 도와드릴까요?"
+            android:text="오늘은 어떻게 귀가하나요?"
             android:textColor="@color/ongil_text"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -202,7 +242,7 @@
                 android:layout_height="64dp"
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:text="위치 공유"
+                android:text="일시 위치 공유"
                 app:cornerRadius="18dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -211,7 +251,7 @@
                 android:layout_height="64dp"
                 android:layout_marginStart="6dp"
                 android:layout_weight="1"
-                android:text="안전 경로"
+                android:text="안전 경로 비교"
                 app:cornerRadius="18dp" />
         </LinearLayout>
 
@@ -221,9 +261,6 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
             app:cardBackgroundColor="@color/ongil_assistant"
             app:cardCornerRadius="22dp"
             app:cardElevation="0dp">
@@ -231,49 +268,72 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="18dp">
 
-                <TextView
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:background="@drawable/bg_avatar"
-                    android:gravity="center"
-                    android:text="ON"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="온길 도우미"
-                        android:textColor="@color/ongil_text"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:contentDescription="온길 귀가 도우미 온이"
+                        android:src="@drawable/ic_oni_pet" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:text="지금 어떤 귀가 상황인지 알려주세요"
-                        android:textColor="@color/ongil_text_secondary"
-                        android:textSize="13sp" />
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="온길 도우미"
+                            android:textColor="@color/ongil_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/assistantMessage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="오늘 픽업이야, 혼자 가?"
+                            android:textColor="@color/ongil_text_secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="›"
-                    android:textColor="@color/ongil_primary"
-                    android:textSize="30sp" />
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/pickupModeButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:text="픽업 가능"
+                        app:cornerRadius="15dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/soloModeButton"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:text="혼자 귀가"
+                        app:cornerRadius="15dp" />
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

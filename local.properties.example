@@ -1,3 +1,9 @@
 # Copy these values into local.properties. Never commit the real key.
 sdk.dir=C\:\\Users\\YOUR_NAME\\AppData\\Local\\Android\\Sdk
-SK_OPEN_API_KEY=replace_with_your_key
+# TMAP Android Vector Map SDK app key. Restrict it to the app package/signature.
+TMAP_APP_KEY=replace_with_your_tmap_app_key
+# Android calls the ON:GIL backend; never put the TOPIS key in this file.
+ONGIL_BACKEND_URL=https://your-ongil-backend.example.com
+# Comma-separated TOPIS LINK_ID values for pickup zones A, B, and C.
+# Leave empty until the real candidate locations and road directions are confirmed.
+TOPIS_LINK_IDS=
