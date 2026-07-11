@@ -86,24 +86,6 @@ TOPIS_LINK_IDS=픽업존A_LINK_ID,픽업존B_LINK_ID,픽업존C_LINK_ID
 ```
 
 `TOPIS_LINK_IDS`의 순서는 A/B/C 픽업존 후보와 대응합니다. 실제 장소와 도로 진행 방향이 확정되기 전에는 빈 값으로 두며, 확정 후 각 후보가 접한 TOPIS 링크 ID를 저장합니다.
-
-## 2인 협업 권장 방식
-
-1. `main`에는 실행 가능한 상태만 합칩니다.
-2. 각자 `feature/기능명` 브랜치에서 작업합니다.
-3. 한 명은 지도/TMAP·데이터 연동, 다른 한 명은 로그인·위치 공유·UI를 맡습니다.
-4. Pull Request에서 화면 캡처와 테스트 방법을 함께 남깁니다.
-
-예시 브랜치:
-
-```text
-feature/map-and-tmap
-feature/location-sharing
-feature/safe-route-score
-```
-
-## 다음 구현 순서
-
 1. 지도 SDK 표시 및 현재 위치 권한 처리
 2. Firebase 또는 Supabase 기반 가족 연결과 실시간 위치 공유
 3. TMAP 차량 경로 및 픽업존 연결
