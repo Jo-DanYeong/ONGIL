@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ONGIL" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ongil_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:statusBarColor">@color/ongil_surface</item>
+        <item name="android:navigationBarColor">@color/ongil_surface</item>
+    </style>
+</resources>

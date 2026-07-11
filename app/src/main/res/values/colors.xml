@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="ongil_primary">#355C4D</color>
+    <color name="ongil_primary_dark">#244237</color>
+    <color name="ongil_secondary">#F2A76F</color>
+    <color name="ongil_surface">#FAFBF8</color>
+    <color name="ongil_text">#18231F</color>
+    <color name="ongil_text_secondary">#617069</color>
+    <color name="ongil_text_muted">#89958F</color>
+    <color name="ongil_border">#DFE6E1</color>
+    <color name="ongil_assistant">#EDF5F0</color>
+    <color name="ongil_success">#4C9B75</color>
+    <color name="ongil_success_dark">#28704D</color>
+    <color name="ongil_success_light">#DFF2E7</color>
+    <color name="ongil_warning">#ECA455</color>
+    <color name="ongil_warning_dark">#A65F18</color>
+    <color name="ongil_warning_light">#FBEBD8</color>
+    <color name="map_background">#E7ECE8</color>
+    <color name="map_road">#FFFFFF</color>
+    <color name="map_student">#5678D4</color>
+    <color name="map_parent">#E27A52</color>
+</resources>
