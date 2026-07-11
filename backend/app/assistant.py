@@ -109,12 +109,16 @@ class AssistantService:
                 "is required. Return NONE for ordinary guidance."
             )}]},
             "generationConfig": {
-                "responseMimeType": "application/json",
-                "responseSchema": schema,
-                "temperature": 0.3,
-                "maxOutputTokens": 200,
-            },
-        }
+                "responseFormat": {
+                    "text": {
+                        "mimeType": "application/json",
+                        "schema": schema,
+                    }
+                },
+            "temperature": 0.3,
+            "maxOutputTokens": 200,
+        },
+    }
 
         async with httpx.AsyncClient(timeout=5, transport=self.transport) as client:
             response = await client.post(
