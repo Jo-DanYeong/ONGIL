@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ongil-backend
+    runtime: python
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: TOPIS_API_KEY
+        sync: false
+      - key: TOPIS_BASE_URL
+        value: http://openapi.seoul.go.kr:8088
+      - key: TOPIS_TIMEOUT_SECONDS
+        value: "5"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
